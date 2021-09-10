@@ -1,8 +1,8 @@
-body{
+body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.navbar{
+.navbar {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -10,13 +10,19 @@ body{
 	/* sticky navbar: sticks to the top while you scroll down */
 	position: sticky;
 	top: 0;
+	background-color: #efefef;
 }
 
 .navbar > li {
 	float: right;
 }
 
-.navbar > li > a {
+.navbar > li > a,
+.navbar > li > a:visited {
 	padding: 8px;
+	margin-left: 8px;
+	margin-right: 8px;
 	display: block;
+	text-decoration: none;
+	color: #000000;
 }

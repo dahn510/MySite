@@ -1,4 +1,4 @@
-from django.template import loader
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from .models import BlogPost
 
@@ -6,15 +6,24 @@ from .models import BlogPost
 
 def PostListView(request):
     pageTitle = 'Blog posts'
-    blogPostList = BlogPost.objects.order_by('-date_posted')
-    template = loader.get_template('myblog/home.html') 
+    blogPostList = BlogPost.objects.order_by('-date_posted')[:5]
     context = { 'blogPostList': blogPostList,
             'pageTitle': pageTitle,
     }
-    return HttpResponse(template.render(context, request))
+    return render(request, 'myblog/home.html', context)
 
-def PostDetailView(request):
-    return HttpResponse("Post detail view, without details...")
+def PostDetailView(request, post_id):
+    pageTitle = 'Post detail'
+
+    # get post or return 404
+    blogPost = get_object_or_404(BlogPost, id=post_id)
+
+    context = {
+            'blogPost': blogPost,
+            'pageTitle': pageTitle,
+            }
+
+    return render(request, 'myblog/detail.html', context)
 
 # Takes integer for month
 # return all of blog posts of published that month

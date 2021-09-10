@@ -22,9 +22,9 @@
 		{#  e.g. it would make sense for blog app page to exclude nav item to blog app page #}
 		{# Note: the nav bar items are repeated in other apps, need to find a way to exclude nav item that is current app page #}
 		<ul class="navbar">
-			<li><a href="{% url 'welcome' %}">Main</a></li>
-			<li><a href="{% url 'blog-home' %}">Blog</a></li>
 			<li><a href="{% url 'blog-home' %}">Projects</a></li>
+			<li><a href="{% url 'blog-home' %}">Blog</a></li>
+			<li><a href="{% url 'welcome' %}">Main</a></li>
 		</ul>
 
 		{# Page content goes in here #}

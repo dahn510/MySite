@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{# replace base title #}
+{% if pageTitle %}
+	{% block pageHeader %}{{ pageTitle }}{% endblock pageHeader %}
+{% endif %}
+
+{# extend base CSS with  for myblog app #}
+{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="{% static 'myblog/home.css' %}">
+{% endblock stylesheet %}
+
+
+{% block content %}
+	<article class="post">
+		<div class="title">
+			<h3>{{ blogPost.title }}</h3>
+			<small>{{ blogPost.date_posted }}</small>
+		</div>
+		<p>{{ blogPost.content }}</p>
+	</article>
+{% endblock content %}

@@ -7,6 +7,16 @@ article.post > div.title > h3{
 	font-size: 1.5rem;
 }
 
+article.post > div.title > h3 > a,
+article.post > div.title > h3 > a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+article.post > div.title > h3 > a:hover {
+	color: #888888;
+}
+
 small{
 	font-size: 0.55rem;
 }

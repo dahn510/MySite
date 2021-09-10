@@ -13,12 +13,13 @@
 
 
 {% block content %}
+
 	{% if blogPostList %}
 
 		{% for post in blogPostList %}
 			<article class="post">
 				<div class="title">
-					<h3>{{ post.title }}</h3>
+					<h3><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
 					<small>{{ post.date_posted }}</small>
 				</div>
 				<p>{{ post.content }}</p>
@@ -28,4 +29,5 @@
 	{% else %}
 		<h2>There are no blog posts at the moment</h2>
 	{% endif %}
+
 {% endblock content %}

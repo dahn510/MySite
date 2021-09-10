@@ -1,0 +1,22 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.navbar{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/* sticky navbar: sticks to the top while you scroll down */
+	position: sticky;
+	top: 0;
+}
+
+.navbar > li {
+	float: right;
+}
+
+.navbar > li > a {
+	padding: 8px;
+	display: block;
+}

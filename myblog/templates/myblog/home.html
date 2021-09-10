@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{# replace base title #}
+{% if pageTitle %}
+	{% block pageHeader %}{{ pageTitle }}{% endblock pageHeader %}
+{% endif %}
+
+{# extend base CSS with  for myblog app #}
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'myblog/home.css' %}">
+{% endblock stylesheet %}
+
+
+{% block content %}
+	{% if blogPostList %}
+
+		{% for post in blogPostList %}
+			<article class="post">
+				<div class="title">
+					<h3>{{ post.title }}</h3>
+					<small>{{ post.date_posted }}</small>
+				</div>
+				<p>{{ post.content }}</p>
+			</article>
+		{% endfor %}
+
+	{% else %}
+		<h2>There are no blog posts at the moment</h2>
+	{% endif %}
+{% endblock content %}

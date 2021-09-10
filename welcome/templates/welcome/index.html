@@ -1,0 +1,12 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{% static 'welcome/index.css' %}"> {% endblock stylesheet %}
+
+{% block pageHeader %}Welcome{% endblock pageHeader %}
+
+{% block content %}
+	<article class="welcome">
+		<h1>I'm Daniel Ahn<br>a software developer.</br></h1>
+	</article>
+{% endblock content %}

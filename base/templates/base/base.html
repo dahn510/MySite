@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}Daniel Ahn{% endblock %}</title>
+
+		<link rel="stylesheet" type="text/css" href="{% static 'base/base.css' %}">
+		{# add app specific CSS #}
+		{% block stylesheet %}{% endblock %}
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<h1>{% block pageHeader %}Daniel Ahn{% endblock pageHeader %}</h1>
+		</header>
+
+		{# add appropriate navigation bar items for each app #}
+		{#  e.g. it would make sense for blog app page to exclude nav item to blog app page #}
+		{# Note: the nav bar items are repeated in other apps, need to find a way to exclude nav item that is current app page #}
+		<ul class="navbar">
+			<li><a href="{% url 'welcome' %}">Main</a></li>
+			<li><a href="{% url 'blog-home' %}">Blog</a></li>
+			<li><a href="{% url 'blog-home' %}">Projects</a></li>
+		</ul>
+
+		{# Page content goes in here #}
+		{% block content %}{% endblock %}
+		<footer>
+
+		</footer>
+	</body>
+</html>

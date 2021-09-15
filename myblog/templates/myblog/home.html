@@ -19,7 +19,7 @@
 		{% for post in blogPostList %}
 			<article class="post">
 				<div class="title">
-					<h3><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
+					<h3><a href="{% url 'blog:post-detail' post.id %}">{{ post.title }}</a></h3>
 					<small>{{ post.date_posted }}</small>
 				</div>
 				<p>{{ post.content }}</p>
